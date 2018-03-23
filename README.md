@@ -11,11 +11,15 @@ wget -O /usr/local/share/fonts/open-sans.zip "https://www.fontsquirrel.com/fonts
 - Določi RTSP naslov kamere
 - Določi "youtube key" za online predvajanje na youtube-u
 
-3.) Poženeš skripto nohup bash videopredvajanje.sh &
+3.) Poženeš skripto 
+```sh
+nohup bash videopredvajanje.sh &
+```
 
 4.) Ker se zna FFMpeg občasno sesuti, je potrebno proces preverjati z crontab-om vsako minuto
 
 ```ruby
+hmod +x check_ffmpeg.sh
 crontab -e
 * * * * * sudo bash /path_to_script/check_ffmpeg.sh
 ```
