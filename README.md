@@ -9,3 +9,7 @@ Program in skripta za stream RTSP na youtube
 - Določi RTSP naslov kamere
 - Določi "youtube key" za online predvajanje na youtube-u
 
+3.) Poženeš skripto nohup bash videopredvajanje.sh &
+
+4.) Ker se zna FFMpeg občasno sesuti 
+
