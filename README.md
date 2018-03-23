@@ -18,8 +18,8 @@ nohup bash videopredvajanje.sh &
 
 4.) Ker se zna FFMpeg občasno sesuti, je potrebno proces preverjati z crontab-om vsako minuto
 
-```ruby
-hmod +x check_ffmpeg.sh
+```sh
+chmod +x check_ffmpeg.sh
 crontab -e
 * * * * * sudo bash /path_to_script/check_ffmpeg.sh
 ```
