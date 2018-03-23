@@ -1,9 +1,5 @@
 # MBPKamera
 Program in skripta za stream RTSP na youtube
-(vir: https://s55ma.radioamater.si/2017/08/04/foscam-camera-rtsp-to-youtube-live-streaming-with-ffmpeg-drawtext-overlay/)
-
-
-
 
 1.)  Poberi fonte:
 ```sh
