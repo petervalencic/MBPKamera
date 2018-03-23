@@ -12,6 +12,7 @@ Program in skripta za stream RTSP na youtube
 3.) Poženeš skripto nohup bash videopredvajanje.sh &
 
 4.) Ker se zna FFMpeg občasno sesuti, je potrebno proces preverjati z crontab-om vsako minuto
+
 crontab -e
 * * * * * sudo bash /path_to_script/check_ffmpeg.sh
 
