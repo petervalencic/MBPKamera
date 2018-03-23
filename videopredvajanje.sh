@@ -1,39 +1,32 @@
 #!/bin/bash
 
 # Rtsp to youtube streaming with ffmpeg
-
 VBR="1000k" # Bitrate of the output video, bandwidth 1000k = 1Mbit/s
 QUAL="ultrafast" # Encoding speed
 YOUTUBE_URL="rtmp://a.rtmp.youtube.com/live2" # RTMP youtube URL
 THREADS="0" # Number of cores, insert 0 for ffmpeg to autoselect, more threads = more FPS
 
 
-SOURCE="rtsp://172.16.201.88:554/user=admin&password=&channel=1&stream=0.sdp?real_stream" # Camera source
-KEY="a9v0-hks6-tdfr-3tgy" # Youtube account key
+SOURCE="rtsp://172.16.201.88:554/user=admin&password=&channel=1&stream=0.sdp?real_stream" #Naslov RTSP stream-a
+KEY="YOUTUBE KLJUČ" # Youtube key za online predvajanje
 
-# To download fonts
-# wget -O /usr/local/share/fonts/open-sans.zip "https://www.fontsquirrel.com/fonts/download/open-sans";unzip open-sans.zip
-
+#v ta folder odloži font
 FONT="/usr/local/share/fonts/OpenSans-Regular.ttf"
 FONTSIZE="15"
 
-# Text allingment
+# Pozicioniranje teksta
 x="5"
 y="60"
 
-# Other
-box="1" # enable box
-boxcolor="black@0.5" # box background color with transparency factor
+# Ostalo
+box="1" # omogoči obrobo
+boxcolor="black@0.5" 
 textfile="ffmpeg.txt"
-reloadtext="1" # Reload textfile after each frame, usefull for overlaying changing data 
-# like weather info. To update the textfile while streaming, you need to use mv command or a crash
-# is going to happen when you update the textfile.
-# Example:
-# wget -q https://something.com/ -O - | grep somevalue > ffmpegraw.txt; mv ffmpegraw.txt ffmpeg.txt
-
+reloadtext="1" # naloži podatke iz tekstovne datoteke v vsakem frame-u
 boxborderwidth="5"
-#-loglevel panic \
-# Ffmpeg with drawtext, 
+
+#Ta flag dodaj, da se ne izpisujejo smeti v konzolo -loglevel panic \
+
     ffmpeg -f lavfi -i anullsrc \
     -rtsp_transport tcp \
     -i "$SOURCE" \
