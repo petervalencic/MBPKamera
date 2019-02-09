@@ -12,7 +12,7 @@ wget -O /usr/local/share/fonts/open-sans.zip "https://www.fontsquirrel.com/fonts
 
 3.) Poženeš skripto 
 ```sh
-nohup bash videopredvajanje.sh &
+nohup bash videoPredvajanje.sh &
 ```
 
 4.) Ker se zna FFMpeg občasno sesuti, je potrebno proces preverjati z crontab-om vsako minuto
