@@ -20,5 +20,5 @@ nohup bash videoPredvajanje.sh &
 ```sh
 chmod +x check_ffmpeg.sh
 crontab -e
-* * * * * sudo bash /path_to_script/check_ffmpeg.sh
+* * * * * sudo bash /path_to_script/preveriFfmpeg.sh
 ```
