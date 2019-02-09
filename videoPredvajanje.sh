@@ -14,7 +14,7 @@ THREADS="0" 		# Number of cores, insert 0 for ffmpeg to autoselect, more threads
 #twitch ingest: https://bashtech.net/twitch/ingest.php
 
 SOURCE="rtsp://192.168.1.188:554/user=admin&password=&channel=1&stream=0.sdp" # Camera source
-KEY="live_148499402_VkJzusrsxYVGj2gAHljxIt63y7TwVc" # Twitch account key
+KEY="##### TWITCH KEY####" # Twitch account key
 
 # To download fonts
 # wget -O /usr/local/share/fonts/open-sans.zip "https://www.fontsquirrel.com/fonts/download/open-sans";unzip open-sans.zip
