@@ -1,5 +1,5 @@
 # MBPKamera
-Program in skripta za stream RTSP na youtube
+Program in skripta za stream RTSP na youtube ali twitch
 
 1.)  Poberi fonte:
 ```sh
@@ -8,7 +8,7 @@ wget -O /usr/local/share/fonts/open-sans.zip "https://www.fontsquirrel.com/fonts
 
 2.)  Editiraj videopredvajanje.sh
 - Določi RTSP naslov kamere
-- Določi "youtube key" za online predvajanje na youtube-u
+- Določi "youtube key" za online predvajanje na youtube-u ali twitch url
 
 3.) Poženeš skripto 
 ```sh
