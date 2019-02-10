@@ -59,7 +59,7 @@ function GetData() {
   temperature=$(echo "${data}" | xmllint --xpath '/root/temp/value/text()' -)
   salinity=$(echo "${data}" | xmllint --xpath '/root/sal/value/text()' -)
 
-  cat <<__EOF__ | tee ${AQUARIUM_DATA_FILE} >&2
+  cat <<__EOF__ | tee ${AQUARIUM_DATA_FILE}
 T: ${temperature} °C
 S: ${salinity} PSU
 __EOF__
@@ -135,7 +135,7 @@ done
   echo "ERROR: Invalid configuration file!  Exiting ..."
   exit 1001
 }
-cat <<__EOF__ >&2
+cat <<__EOF__
 Configuration:
  AQUARIUM_DATA_FILE = '${AQUARIUM_DATA_FILE}'
  ARDUINO_ROOT_URI = '${ARDUINO_ROOT_URI}'
