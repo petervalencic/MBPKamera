@@ -69,10 +69,10 @@ __EOF__
 # -- Starts FFmpeg streaming --
 function StreamVideo() {
   ffmpeg \
-    -loglevel ${FFMPEG_LOG_LEVEL} -f lavfi -i anullsrc \
+    -loglevel ${FFMPEG_LOG_LEVEL} \
     -rtsp_transport tcp \
     -i "${FFMPEG_CAM_RTSP_SRC}" \
-    -vcodec libx264 -pix_fmt yuv420p -preset ${FFMPEG_QUAL} -g 75 -b:v ${FFMPEG_VBR} \
+    -vcodec libx264 -pix_fmt yuv420p -preset ${FFMPEG_QUAL} -g 70 -b:v ${FFMPEG_VBR} \
     -vf "\
 drawtext=fontfile=${FFMPEG_TEXT_OVERLAY_FONT_PATH}:textfile=${AQUARIUM_DATA_FILE}:\
 x=${FFMPEG_TEXT_OVERLAY_OFFSET_X}:y=${FFMPEG_TEXT_OVERLAY_OFFSET_X}:\
@@ -80,9 +80,11 @@ reload=${FFMPEG_TEXT_OVERLAY_RELOAD}: \
 fontcolor=white:fontsize=${FFMPEG_TEXT_OVERLAY_FONT_SIZE}:\
 box=${FFMPEG_TEXT_OVERLAY_BOX}:boxborderw=${FFMPEG_TEXT_OVERLAY_BOX_BORDER_WIDTH}:\
 boxcolor=${FFMPEG_TEXT_OVERLAY_BOX_COLOR}"\
-    -threads ${FFMPEG_THREADS} -bufsize 512k \
+    -movflags faststart \
+    -threads ${FFMPEG_THREADS} -bufsize 700k \
     -f flv "${FFMPEG_TWITCH_STREAM_URL_DST}/${FFMPEG_TWITCH_KEY}"
 }
+
 
 
 # -- Checks if the streaming is running, otherwise starts it --
